@@ -1,0 +1,124 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import pages.HomePage;
+import pages.LiquidacionTarjetasPage;
+import pages.LoginPage;
+
+
+public class TestLiquidacionTarjetastitular {
+	WebDriver driver;
+	String PATH_DRIVER = "./drivers/chromedriver.exe";
+	String TYPE_DRIVER = "webdriver.chrome.driver";
+	String URL = "https://servicios-i.redsys.es:54443/infotar/";
+	String usuario = "I00010011";
+	String pass = "Prueba.123";
+	
+	LoginPage login;
+	HomePage home;
+	LiquidacionTarjetasPage liquidacion;
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		System.setProperty(TYPE_DRIVER, PATH_DRIVER);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(URL);
+		login = new LoginPage(driver);
+	}
+	
+	
+	@Test
+	public void testMovimientos() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.selectTarjeta();
+		liquidacion.selectFechaOpDesde("2020/08/24");
+		liquidacion.selectFechaOpHasta("2020/08/29");
+		liquidacion.clicarInforme();
+		Assert.assertEquals("No se encontraron resultados", liquidacion.getMovimientos());	
+	}
+	
+	@Test
+	public void testLimpiarFiltros() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.selectTarjeta();
+		liquidacion.selectFechaOpDesde("2020/08/24");
+		liquidacion.selectFechaOpHasta("2020/08/29");
+		liquidacion.clicarLimpiarFiltros();
+		Assert.assertEquals("Seleccione una opción", liquidacion.filtroLimpio2());
+	}
+	
+	@Test
+	public void testSeleccionarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.clicarVerFiltros();
+		liquidacion.clicarPrimerFiltro();
+		liquidacion.clicarAceptar();
+		liquidacion.clicarInforme();
+		Assert.assertEquals("No se encontraron resultados", liquidacion.getMovimientos());
+	}
+	
+	@Test
+	public void testBorrarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.clicarVerFiltros();
+		liquidacion.clicarBorrarFiltro();
+		liquidacion.clicarAceptarBorrar();
+		Assert.assertEquals("Filtro eliminado con éxito", liquidacion.textoBorrado());		
+	}
+	
+	@Test
+	public void testGuardarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.selectTarjeta();
+		liquidacion.selectFechaOpDesde("2020/08/24");
+		liquidacion.selectFechaOpHasta("2020/08/29");
+		liquidacion.clicarInforme();
+		liquidacion.clicarGuardarFiltro();
+		liquidacion.ponerNombreFiltro("Filtro automatización");
+		liquidacion.clicarGuardar();
+		Assert.assertEquals("Filtro guardado con éxito", liquidacion.textoGuardado());
+		
+	}
+	
+	@Test
+	public void testFiltroSinNombre() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irLiquidacion();
+		liquidacion = new LiquidacionTarjetasPage(driver);
+		liquidacion.selectTarjeta();
+		liquidacion.clicarGuardarFiltro();
+		liquidacion.filtroSinNombre();
+		liquidacion.clicarGuardar();
+		Assert.assertEquals("El nombre del filtro no puede estar vacío", liquidacion.textoSinNombre());
+		
+	}
+	
+	
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+	}
+}

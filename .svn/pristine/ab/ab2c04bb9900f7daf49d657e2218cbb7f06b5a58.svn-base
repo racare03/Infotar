@@ -1,0 +1,129 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import pages.DatosTarjetasPage;
+import pages.HomePage;
+import pages.LoginPage;
+
+public class TestDatosTarjetas {
+	
+	WebDriver driver;
+	String PATH_DRIVER = "./drivers/chromedriver.exe";
+	String TYPE_DRIVER = "webdriver.chrome.driver";
+	String URL = "https://servicios-i.redsys.es:54443/infotar/";
+	String usuario = "s6169rc";
+	String pass = "Almoca27";
+	
+	LoginPage login;
+	HomePage home;
+	DatosTarjetasPage datosTarjetas;
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		System.setProperty(TYPE_DRIVER, PATH_DRIVER);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(URL);
+		login = new LoginPage(driver);
+	}
+	
+	@Test
+	public void testNoGrupoNoEmpresa() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.clicarInforme();
+		Assert.assertEquals("Debe seleccionar un valor para el grupo de empresa y para la empresa", datosTarjetas.getMensaje());
+	}
+	
+	@Test
+	public void testDatosTarjetas() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.selectGrupo();
+		datosTarjetas.selectEmpresa();
+		datosTarjetas.clicarInforme();
+		Assert.assertEquals("GARCIA JUAN BANDERA", datosTarjetas.getMovimientos());
+	}
+	
+	@Test
+	public void testLimpiarFiltros() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.selectGrupo();
+		datosTarjetas.selectEmpresa();
+		datosTarjetas.clicarLimpiarFiltros();
+		Assert.assertEquals("Seleccione una opción", datosTarjetas.filtroLimpio());
+	}
+	
+	@Test
+	public void testSeleccionarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.clicarVerFiltros();
+		datosTarjetas.clicarPrimerFiltro();
+		datosTarjetas.clicarAceptar();
+		datosTarjetas.clicarInforme();
+		Assert.assertEquals("GARCIA JUAN BANDERA", datosTarjetas.getMovimientos());
+	}
+	
+	@Test
+	public void testBorrarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.clicarVerFiltros();
+		datosTarjetas.clicarBorrarFiltro();
+		datosTarjetas.clicarAceptarBorrar();
+		Assert.assertEquals("Filtro eliminado con éxito", datosTarjetas.textoBorrado());
+	}
+	
+	@Test
+	public void testGuardarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.selectGrupo();
+		datosTarjetas.selectEmpresa();
+		datosTarjetas.clicarInforme();
+		datosTarjetas.clicarGuardarFiltro();
+		datosTarjetas.ponerNombreFiltro("Filtro automatización");
+		datosTarjetas.clicarGuardar();
+		Assert.assertEquals("Filtro guardado con éxito", datosTarjetas.textoGuardado());
+	}
+	
+	@Test
+	public void testFiltroSinNombre() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irDatosTarjetas();
+		datosTarjetas = new DatosTarjetasPage(driver);
+		datosTarjetas.selectGrupo();
+		datosTarjetas.selectEmpresa();
+		datosTarjetas.clicarGuardarFiltro();
+		datosTarjetas.filtroSinNombre();
+		datosTarjetas.clicarGuardar();
+		Assert.assertEquals("El nombre del filtro no puede estar vacío", datosTarjetas.textoSinNombre());	
+		}
+	
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+	}
+	
+}

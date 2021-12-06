@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="6" total="9" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-10-06T16:16:54 CEST" name="Default suite" finished-at="2021-10-06T16:17:11 CEST" duration-ms="16957">
+    <groups>
+    </groups>
+    <test started-at="2021-10-06T16:16:54 CEST" name="Default test" finished-at="2021-10-06T16:17:11 CEST" duration-ms="16957">
+      <class name="tests.TestMovimientos">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:16:54 CEST" name="beforeMethod" finished-at="2021-10-06T16:16:57 CEST" duration-ms="2944" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNoGrupoNoEmpresa(java.lang.String)[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:16:57 CEST" name="testNoGrupoNoEmpresa" data-provider="autenticacion" finished-at="2021-10-06T16:17:00 CEST" duration-ms="2558" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[s6169rc,Almoca30]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoGrupoNoEmpresa -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:00 CEST" name="afterMethod" finished-at="2021-10-06T16:17:01 CEST" duration-ms="701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:01 CEST" name="beforeMethod" finished-at="2021-10-06T16:17:03 CEST" duration-ms="2148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNoGrupoNoEmpresa(java.lang.String)[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:03 CEST" name="testNoGrupoNoEmpresa" data-provider="autenticacion" finished-at="2021-10-06T16:17:05 CEST" duration-ms="2375" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[E0049S79,Lunes1510]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoGrupoNoEmpresa -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:05 CEST" name="afterMethod" finished-at="2021-10-06T16:17:06 CEST" duration-ms="714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:06 CEST" name="beforeMethod" finished-at="2021-10-06T16:17:08 CEST" duration-ms="2329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="testNoGrupoNoEmpresa(java.lang.String)[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:08 CEST" name="testNoGrupoNoEmpresa" data-provider="autenticacion" finished-at="2021-10-06T16:17:11 CEST" duration-ms="2395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[E0049S81,Lunes1510]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testNoGrupoNoEmpresa -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:tests.TestMovimientos@932bc4a]" started-at="2021-10-06T16:17:11 CEST" name="afterMethod" finished-at="2021-10-06T16:17:11 CEST" duration-ms="726" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- tests.TestMovimientos -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

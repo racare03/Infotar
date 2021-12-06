@@ -1,0 +1,59 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import pages.ConsultasOnlinePage;
+import pages.HomePage;
+import pages.LoginPage;
+
+public class TestConsultasOnline {
+	
+	WebDriver driver;
+	String PATH_DRIVER = "./drivers/chromedriver.exe";
+	String TYPE_DRIVER = "webdriver.chrome.driver";
+	String URL = "https://servicios-i.redsys.es:54443/infotar/";
+	String usuario = "s6169rc";
+	String pass = "Almoca27";
+	
+	LoginPage login;
+	HomePage home;
+	ConsultasOnlinePage consultasOnline;
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		System.setProperty(TYPE_DRIVER, PATH_DRIVER);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(URL);
+		login = new LoginPage(driver);
+	}
+	
+	
+	@Test
+	public void consultaOnline() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irConsultasOnline();
+		consultasOnline = new ConsultasOnlinePage(driver);
+		consultasOnline.selectGrupo();
+		consultasOnline.selectEmpresa();
+		consultasOnline.selectDepartamento();
+		consultasOnline.selectTitular();
+		consultasOnline.selectTarjeta();
+		consultasOnline.clicarConfirmar();
+		Assert.assertEquals("409111******8014", consultasOnline.getMensajeTarjeta());
+			
+	}
+	
+	
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+	}
+
+}

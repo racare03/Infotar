@@ -1,0 +1,34 @@
+{
+	"administradores":[
+	{
+		"username": "s6169rc",
+		"password": "Almoca30"
+	},
+	{
+		"username": "E0049S79",
+		"password": "Lunes1510"
+	},
+	{
+		"username": "E0049S81",
+		"password": "Lunes1510"
+	}
+	],
+	"adminEmpresa":[
+	{
+		"username": "I00010014",
+		"password": "Prueba.123"
+	}
+	],
+	"adminGrupo":[
+	{
+		"username": "I00010009",
+		"password": "Prueba1234"
+	}
+	],
+	"titular":[
+	{
+		"username": "I00010011",
+		"password": "Prueba.123"
+	}
+	]
+}

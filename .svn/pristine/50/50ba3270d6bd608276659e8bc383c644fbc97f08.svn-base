@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test Movimientos">
+    <classes> 
+      <class name="tests.TestMovimientos"/>
+      <class name="tests.TestMovimientosAdminGrupo"/>
+      <class name="tests.TestMovimientosAdminEmpresa"/>      
+      <class name="tests.TestMovimientosTitular"/>     
+    </classes>
+  </test> 
+  <test name="Test Liquidacion Tarjetas">
+    <classes>
+      <class name="tests.TestLiquidacionTarjetas"/>   
+      <class name="tests.TestLiquidacionTarjetasAdminGrupo"/>
+      <class name="tests.TestLiquidacionTarjetasAdminEmpresa"/>     
+      <class name="tests.TestLiquidacionTarjetastitular"/>
+    </classes>
+  </test> 
+  <test name="Test Totales de Tarjeta">
+    <classes>
+      <class name="tests.TestTotalesTarjeta"/>
+      <class name="tests.TestTotalesTarjetaAdminGrupo"/>
+      <class name="tests.TestTotalesTarjetaAdminEmpresa"/>
+      <class name="tests.TestTotalesTarjetaTitular"/>
+    </classes>
+  </test> 
+  <test name="Test Datos de Tarjetas">
+    <classes>
+      <class name="tests.TestDatosTarjetas"/>
+      <class name="tests.TestDatosTarjetasAdminGrupo"/>
+      <class name="tests.TestDatosTarjetasAdminEmpresa"/>
+      <class name="tests.TestDatosTarjetasTitular"/> 
+    </classes>
+  </test> 
+   <test name="Test Consultas Online">
+    <classes>
+      <class name="tests.TestConsultasOnline"/>
+      <class name="tests.TestConsultasOnlineAdminGrupo"/>
+      <class name="tests.TestConsultasOnlineAdminEmpresa"/>
+      <class name="tests.TestConsultasOnlineTitular"/>     
+    </classes>
+  </test> 
+</suite> 

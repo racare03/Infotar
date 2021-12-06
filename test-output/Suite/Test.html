@@ -1,0 +1,787 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>129/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Jun 08 11:37:33 CEST 2021</td>
+</tr>
+<tr><td>Total time:</td><td>1091 seconds (1091700 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //*[@id=&quot;tb-tarjetas&quot;]/tbody/tr/td[7] to have text &quot;GARCIA JUAN BANDERA&quot;. Current text: &quot;null&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;P2908-W10&apos;, ip: &apos;10.181.2.164&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\s6169rc\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52513}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 60d8f955e28ba13daa5a682d860ffe50
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at pages.TotalesTarjetaPage.getMovimientos(TotalesTarjetaPage.java:101)
+	at tests.TestTotalesTarjetaTitular.testSeleccionarFiltro(TestTotalesTarjetaTitular.java:72)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace716442925", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace716442925'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //*[@id=&quot;tb-tarjetas&quot;]/tbody/tr/td[7] to have text &quot;GARCIA JUAN BANDERA&quot;. Current text: &quot;null&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;P2908-W10&apos;, ip: &apos;10.181.2.164&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\s6169rc\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:52513}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 60d8f955e28ba13daa5a682d860ffe50
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at pages.TotalesTarjetaPage.getMovimientos(TotalesTarjetaPage.java:101)
+	at tests.TestTotalesTarjetaTitular.testSeleccionarFiltro(TestTotalesTarjetaTitular.java:72)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>14</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.TestLogin.testLoginError()'><b>testLoginError</b><br>Test class: tests.TestLogin</td>
+<td></td>
+<td>0</td>
+<td>tests.TestLogin@f5acb9d</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testDatosTarjetas()'><b>testDatosTarjetas</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testTotales()'><b>testTotales</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>10</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testTotales()'><b>testTotales</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>6</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testTotales()'><b>testTotales</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>8</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>6</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testDatosTarjetas()'><b>testDatosTarjetas</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>6</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testNoEmpresa()'><b>testNoEmpresa</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testNoEmpresa()'><b>testNoEmpresa</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>2</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testNoEmpresa()'><b>testNoEmpresa</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>8</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>6</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestConsultasOnlineTitular.consultaOnline()'><b>consultaOnline</b><br>Test class: tests.TestConsultasOnlineTitular</td>
+<td></td>
+<td>3</td>
+<td>tests.TestConsultasOnlineTitular@2f217633</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestLogin.testLoginExito()'><b>testLoginExito</b><br>Test class: tests.TestLogin<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>1</td>
+<td>tests.TestLogin@f5acb9d</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>3</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testLiquidaciones()'><b>testLiquidaciones</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>7</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestLogin.testLoginExito()'><b>testLoginExito</b><br>Test class: tests.TestLogin<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>1</td>
+<td>tests.TestLogin@f5acb9d</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestConsultasOnlineAdminGrupo.consultaOnline()'><b>consultaOnline</b><br>Test class: tests.TestConsultasOnlineAdminGrupo</td>
+<td></td>
+<td>6</td>
+<td>tests.TestConsultasOnlineAdminGrupo@58695725</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>6</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testDatosTarjetas()'><b>testDatosTarjetas</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminEmpresa.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientosAdminEmpresa</td>
+<td></td>
+<td>6</td>
+<td>tests.TestMovimientosAdminEmpresa@48f278eb</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestMovimientos<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>3</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testNoEmpresa()'><b>testNoEmpresa</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminGrupo.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminGrupo</td>
+<td></td>
+<td>8</td>
+<td>tests.TestDatosTarjetasAdminGrupo@614ca7df</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S81, Lunes1506</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaTitular.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestTotalesTarjetaTitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaTitular@a530d0a</td></tr>
+<tr>
+<td title='tests.TestLogin.testLoginExito()'><b>testLoginExito</b><br>Test class: tests.TestLogin<br>Parameters: s6169rc, Almoca26</td>
+<td></td>
+<td>1</td>
+<td>tests.TestLogin@f5acb9d</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>4</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testLiquidaciones()'><b>testLiquidaciones</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestMovimientosAdminGrupo.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestMovimientosAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientosAdminGrupo@66d3eec0</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testLiquidaciones()'><b>testLiquidaciones</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>7</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>3</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasAdminEmpresa.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestDatosTarjetasAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasAdminEmpresa@4fb3ee4e</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminGrupo.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestTotalesTarjetaAdminGrupo</td>
+<td></td>
+<td>3</td>
+<td>tests.TestTotalesTarjetaAdminGrupo@5acf93bb</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminEmpresa.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestLiquidacionTarjetasAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetasAdminEmpresa@1af2d44a</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjetaAdminEmpresa.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestTotalesTarjetaAdminEmpresa</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjetaAdminEmpresa@543588e6</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>4</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testFiltroSinNombre()'><b>testFiltroSinNombre</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestMovimientos.testMovimientos()'><b>testMovimientos</b><br>Test class: tests.TestMovimientos<br>Parameters: E0049S79, Lunes1506</td>
+<td></td>
+<td>4</td>
+<td>tests.TestMovimientos@18d87d80</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testDatosTarjetas()'><b>testDatosTarjetas</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetas.testNoGrupoNoEmpresa()'><b>testNoGrupoNoEmpresa</b><br>Test class: tests.TestLiquidacionTarjetas</td>
+<td></td>
+<td>3</td>
+<td>tests.TestLiquidacionTarjetas@3059cbc</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestConsultasOnlineAdminEmpresa.consultaOnline()'><b>consultaOnline</b><br>Test class: tests.TestConsultasOnlineAdminEmpresa</td>
+<td></td>
+<td>5</td>
+<td>tests.TestConsultasOnlineAdminEmpresa@1a18644</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>5</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetasAdminGrupo.testBorrarFiltro()'><b>testBorrarFiltro</b><br>Test class: tests.TestLiquidacionTarjetasAdminGrupo</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetasAdminGrupo@1da2cb77</td></tr>
+<tr>
+<td title='tests.TestMovimientosTitular.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestMovimientosTitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestMovimientosTitular@4738a206</td></tr>
+<tr>
+<td title='tests.TestConsultasOnline.consultaOnline()'><b>consultaOnline</b><br>Test class: tests.TestConsultasOnline</td>
+<td></td>
+<td>4</td>
+<td>tests.TestConsultasOnline@6cd28fa7</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetas.testGuardarFiltro()'><b>testGuardarFiltro</b><br>Test class: tests.TestDatosTarjetas</td>
+<td></td>
+<td>5</td>
+<td>tests.TestDatosTarjetas@1e04fa0a</td></tr>
+<tr>
+<td title='tests.TestLiquidacionTarjetastitular.testSeleccionarFiltro()'><b>testSeleccionarFiltro</b><br>Test class: tests.TestLiquidacionTarjetastitular</td>
+<td></td>
+<td>5</td>
+<td>tests.TestLiquidacionTarjetastitular@7e7be63f</td></tr>
+<tr>
+<td title='tests.TestDatosTarjetasTitular.testLimpiarFiltros()'><b>testLimpiarFiltros</b><br>Test class: tests.TestDatosTarjetasTitular</td>
+<td></td>
+<td>3</td>
+<td>tests.TestDatosTarjetasTitular@611889f4</td></tr>
+<tr>
+<td title='tests.TestTotalesTarjeta.testTotalesTajeta()'><b>testTotalesTajeta</b><br>Test class: tests.TestTotalesTarjeta</td>
+<td></td>
+<td>4</td>
+<td>tests.TestTotalesTarjeta@618425b5</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,123 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import pages.HomePage;
+import pages.LoginPage;
+import pages.TotalesTarjetaPage;
+
+public class TestTotalesTarjetaTitular {
+	WebDriver driver;
+	String PATH_DRIVER = "./drivers/chromedriver.exe";
+	String TYPE_DRIVER = "webdriver.chrome.driver";
+	String URL = "https://servicios-i.redsys.es:54443/infotar/";
+	String usuario = "I00010011";
+	String pass = "Prueba.123";
+	
+	LoginPage login;
+	HomePage home;
+	TotalesTarjetaPage totales;
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		System.setProperty(TYPE_DRIVER, PATH_DRIVER);
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(URL);
+		login = new LoginPage(driver);
+	}
+	
+	
+	@Test
+	public void testTotales() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.selectTarjeta();
+		totales.selectFechaOpDesde("2020/08/24");
+		totales.selectFechaOpHasta("2020/08/29");
+		totales.clicarInforme();
+		Assert.assertEquals("GARCIA JUAN BANDERA", totales.getMovimientos());	
+	}
+	
+	@Test
+	public void testLimpiarFiltros() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.selectTarjeta();
+		totales.selectFechaOpDesde("2020/08/24");
+		totales.selectFechaOpHasta("2020/08/29");
+		totales.clicarLimpiarFiltros();
+		Assert.assertEquals("Seleccione una opción", totales.filtroLimpio2());
+	}
+	
+	@Test
+	public void testSeleccionarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.clicarVerFiltros();
+		totales.clicarPrimerFiltro();
+		totales.clicarAceptar();
+		totales.clicarInforme();
+		Assert.assertEquals("GARCIA JUAN BANDERA", totales.getMovimientos());
+	}
+	
+	@Test
+	public void testBorrarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.clicarVerFiltros();
+		totales.clicarBorrarFiltro();
+		totales.clicarAceptarBorrar();
+		Assert.assertEquals("Filtro eliminado con éxito", totales.textoBorrado());		
+	}
+	
+	@Test
+	public void testGuardarFiltro() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.selectTarjeta();
+		totales.selectFechaOpDesde("2020/08/24");
+		totales.selectFechaOpHasta("2020/08/29");
+		totales.clicarInforme();
+		totales.clicarGuardarFiltro();
+		totales.ponerNombreFiltro("Filtro automatización");
+		totales.clicarGuardar();
+		Assert.assertEquals("Filtro guardado con éxito", totales.textoGuardado());
+		
+	}
+	
+	@Test
+	public void testFiltroSinNombre() {
+		login.iniciarSesion(usuario, pass);
+		home = new HomePage(driver);
+		home.irTotalesTarjeta();
+		totales = new TotalesTarjetaPage(driver);
+		totales.selectTarjeta();
+		totales.clicarGuardarFiltro();
+		totales.filtroSinNombre();
+		totales.clicarGuardar();
+		Assert.assertEquals("El nombre del filtro no puede estar vacío", totales.textoSinNombre());
+		
+	}
+	
+	
+	@AfterMethod
+	public void afterMethod() {
+		driver.quit();
+	}
+}
